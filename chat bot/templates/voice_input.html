@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Input Example</title>
+</head>
+<body>
+
+<h2>Speech to Text</h2>
+
+<input type="text" id="textbox" placeholder="Speak here..." size="40">
+<button onclick="startListening()">🎤 Start</button>
+
+<script>
+function startListening() {
+    var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    
+    recognition.lang = "en-US";
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        document.getElementById("textbox").value = 
+            event.results[0][0].transcript;
+    };
+
+    recognition.onerror = function(event) {
+        alert("Error occurred: " + event.error);
+    };
+}
+</script>
+
+</body>
+</html>

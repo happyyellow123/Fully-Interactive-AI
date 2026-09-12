@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <title>Homepage for AI</title>
+    <link rel="stylesheet" href="/static/style_for_AI.css">
+</head>
+<body>
+    <h1>Chat with AI!</h1>
+    <br>
+    <h2 class="talk">{{ userm }}</h2>
+    <h2 class="talk">{{ mback }}</h2>
+    <form action="/send" method="POST" class="bottom">
+        <input type="text" name="message" placeholder="Enter to ask" class="type">
+        <button type="submit" class="type">Send</button>
+    </form>
+</body>
